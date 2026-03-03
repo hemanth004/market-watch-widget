@@ -11,7 +11,7 @@
 
 ## 📌 Project Overview
 
-**MarketWatch** is a standalone real-time trading widget built using
+**MarketWatch** is a standalone trading widget built using
 **Angular (Standalone Components)** and **TypeScript (Strict Mode)**.
 
 It simulates a high-frequency trading dashboard component that:
