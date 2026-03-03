@@ -1,0 +1,234 @@
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+  <div class="nav-content">
+    <div class="logo">Market Watch</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#demo">Demo</a>
+      <a href="#future">Future</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+
+<section id="hero" class="hero">
+  <div class="hero-wrapper">
+    
+    <div class="hero-visual">
+      <img src="/graph_outline.png"
+           class="hero-icon"
+           alt="Market Growth Icon" />
+    </div>
+
+    <div class="hero-content">
+      <h1>Market Watch</h1>
+      <p>
+        A scalable, performance-optimized real-time price monitoring
+        component built with Angular and reactive architecture.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="about" #aboutSection>
+
+  <div class="about-sticky">
+    <div class="about-track" #aboutTrack>
+
+      <!-- Slide 1: Problem -->
+      <div class="about-slide">
+        <div class="slide-content">
+          <h2>Problem Statement</h2>
+          <p>
+            Financial dashboards require real-time visibility into price changes
+            without overwhelming users with cluttered data.
+            The challenge was to maintain clarity, performance,
+            and scalability during continuous streaming.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slide 2: UX Goals -->
+          <div class="about-slide">
+      <div class="slide-content ux-layout">
+        <h2>UX Goals</h2>
+
+        <div class="ux-stack">
+          <div class="ux-item">
+            <span class="ux-dot"></span>
+            <div>
+              <h4>Instant Feedback</h4>
+              <p>Clear visual signals for real-time price movement.</p>
+            </div>
+          </div>
+
+          <div class="ux-item">
+            <span class="ux-dot"></span>
+            <div>
+              <h4>Clutter-Free Streaming</h4>
+              <p>Continuous updates without overwhelming the user.</p>
+            </div>
+          </div>
+
+          <div class="ux-item">
+            <span class="ux-dot"></span>
+            <div>
+              <h4>User Control</h4>
+              <p>Configurable alert thresholds for flexibility.</p>
+            </div>
+          </div>
+
+          <div class="ux-item">
+            <span class="ux-dot"></span>
+            <div>
+              <h4>Professional Tone</h4>
+              <p>Clean, modern financial UI aesthetic.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Slide 3: Architecture -->
+      <div class="about-slide">
+  <div class="slide-content architecture-layout">
+    <h2>Architecture Overview</h2>
+
+    <div class="architecture-grid">
+
+      <div class="arch-card">
+        <h4>UI Layer</h4>
+        <p>Handles rendering, interaction, and alert visualization.</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>Reactive Stream Layer</h4>
+        <p>PriceStream service emits live data using RxJS Observables.</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>Processing Layer</h4>
+        <p>Maintains sliding one-minute window for memory efficiency.</p>
+      </div>
+
+      <div class="arch-card">
+        <h4>Visualization Layer</h4>
+        <p>Chart.js performs incremental updates for smooth rendering.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Slide 4: Real-Time Strategy -->
+      <div class="about-slide">
+  <div class="slide-content strategy-layout">
+    <h2>Real-Time Strategy</h2>
+
+    <div class="strategy-grid">
+
+      <div class="strategy-card">
+        <h4>Sliding Window</h4>
+        <p>Maintains a bounded one-minute dataset to prevent memory growth.</p>
+      </div>
+
+      <div class="strategy-card">
+        <h4>Incremental Updates</h4>
+        <p>Chart updates without full re-render or animation reset.</p>
+      </div>
+
+      <div class="strategy-card">
+        <h4>Reactive Streams</h4>
+        <p>Observable-driven updates ensure clean, decoupled state flow.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+      <!-- Slide 5: Performance -->
+      <div class="about-slide">
+  <div class="slide-content performance-layout">
+    <h2>Performance Optimization</h2>
+
+    <div class="performance-grid">
+
+      <div class="performance-card">
+        <h4>OnPush Strategy</h4>
+        <p>Angular OnPush change detection minimizes unnecessary re-renders.</p>
+      </div>
+
+      <div class="performance-card">
+        <h4>Bounded Memory</h4>
+        <p>Maintains a fixed rolling dataset to prevent memory growth.</p>
+      </div>
+
+      <div class="performance-card">
+        <h4>Efficient Processing</h4>
+        <p>Queue-style trimming ensures optimized data management.</p>
+      </div>
+
+      <div class="performance-card">
+        <h4>Smooth Rendering</h4>
+        <p>Chart updates without animation reset for stable performance.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- LIVE DEMO -->
+
+<section id="demo" class="section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <h2 class="section-title">Live Demonstration</h2>
+      <p class="section-subtitle">
+        Interactive real-time widget in action.
+      </p>
+    </div>
+
+    <div class="demo-container">
+      <app-market-watch></app-market-watch>
+    </div>
+
+  </div>
+</section>
+
+<!-- FUTURE -->
+
+<section id="future" class="section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <h2 class="section-title">Future Improvements</h2>
+      <p class="section-subtitle">
+        Potential enhancements for production scale.
+      </p>
+    </div>
+
+    <div class="section-content">
+      <ul class="clean-list">
+        <li>WebSocket-based real market data integration</li>
+        <li>Server-driven alert configuration</li>
+        <li>Unit and performance testing expansion</li>
+        <li>Accessibility improvements for live updates</li>
+        <li>SSR optimization for SEO environments</li>
+      </ul>
+    </div>
+
+  </div>
+</section>

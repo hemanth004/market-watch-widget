@@ -1,0 +1,62 @@
+<div class="widget-container">
+
+  <div class="widget-header">
+    <div>
+      <h2>Market Watch</h2>
+      <span class="subtitle">Real-Time Price Monitor</span>
+    </div>
+
+    <button
+  (click)="toggleStream()"
+  class="control-btn"
+  [ngClass]="isRunning ? 'running' : 'paused'">
+
+  <span class="icon">
+    {{ isRunning ? '⏸' : '▶' }}
+  </span>
+
+  {{ isRunning ? 'Pause Stream' : 'Resume Stream' }}
+</button>
+  </div>
+
+  <div class="price-card" [class.alert]="isAlert">
+
+    <div class="price-row">
+      <span
+        class="price-value"
+        [class.up]="trend === 'up'"
+        [class.down]="trend === 'down'">
+        ₹ {{ latestPrice ?? '---' }}
+      </span>
+
+      <span
+        class="trend"
+        [class.up]="trend === 'up'"
+        [class.down]="trend === 'down'">
+        {{ trend === 'up' ? '▲' : trend === 'down' ? '▼' : '' }}
+      </span>
+    </div>
+
+    <div class="meta">
+      Last updated: {{ lastUpdated ?? '--' }}
+    </div>
+
+  </div>
+
+  <div class="threshold-section">
+    <label>Alert Threshold</label>
+    <input
+      type="number"
+      [(ngModel)]="threshold"
+      placeholder="Enter price limit" />
+  </div>
+
+  <div *ngIf="isAlert" class="alert-message">
+    Price exceeded threshold.
+  </div>
+
+  <div class="chart-card">
+    <canvas #priceChart></canvas>
+  </div>
+
+</div>
