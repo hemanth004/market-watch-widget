@@ -1,4 +1,4 @@
-# 📈 MarketWatch -- Real-Time Trading Widget
+# 📈 Market Watch Widget
 
 ![Angular](https://img.shields.io/badge/Angular-21.1.4-red?logo=angular)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?logo=typescript)
