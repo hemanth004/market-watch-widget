@@ -6,7 +6,8 @@ import {
   ChangeDetectionStrategy, 
   ChangeDetectorRef, 
   ViewChild, 
-  ElementRef 
+  ElementRef,
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -48,10 +49,9 @@ export class MarketWatch implements OnInit, OnDestroy, AfterViewInit {
   isAlert = false;
   isRunning = true;
 
-  constructor(
-    private priceStream: PriceStream,
-    private cdr: ChangeDetectorRef
-  ) {}
+  // --- Private Dependencies ---
+  private priceStream = inject(PriceStream);
+  private cdr = inject(ChangeDetectorRef);
 
   // --- Lifecycle Hooks ---
 
