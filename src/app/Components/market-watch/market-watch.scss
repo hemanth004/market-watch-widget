@@ -206,3 +206,48 @@
   align-items: flex-end;
   gap: 16px;
 }
+
+/* RESPONSIVE DESIGN (MOBILE) */
+@media (max-width: 600px) {
+  .widget-container {
+    padding: 24px 16px; /* Less padding on small screens */
+    border-radius: 16px;
+  }
+
+  .widget-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .controls {
+    width: 100%;
+    flex-wrap: wrap; /* Allow the button to wrap if extremely narrow */
+    justify-content: flex-start;
+  }
+
+  .threshold-section {
+    flex: 1; /* Input can take up available space until wrap */
+    min-width: 140px;
+    
+    input {
+      width: 100%; /* Ensure input fills available area */
+      box-sizing: border-box;
+    }
+  }
+
+  .price-value {
+    font-size: 32px; /* Smaller main price */
+  }
+
+  .price-row {
+    flex-wrap: wrap; /* Allow badge to drop down if needed */
+  }
+
+  .alert-message {
+    margin-left: 0; /* Reset margin on mobile so it doesn't force bad wrapping */
+    margin-top: 8px; /* Give it space when it drops down */
+    width: fit-content;
+  }
+}
