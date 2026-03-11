@@ -141,6 +141,13 @@ No memory leaks during unmount.
 -   Visual state indicators
 -   Professional financial UI aesthetic
 
+### ✨ Recent UI Enhancements
+
+- **Layout Stability:** Fixed DOM jittering by replacing conditional `*ngIf` unmounting of the alert badge with CSS `visibility` toggling.
+- **Whitespace Polish:** Corrected header flex-alignments, reduced extraneous margins between controls, and aligned line-heights for a tighter, cleaner widget layout.
+- **Threshold Visibility:** The threshold input field was improved with a distinct background footprint, structural borders, and interactive hover states to stand out beautifully against the widget background.
+- **Integrations:** Decreased overall component outer margins so the widget embeds cleanly inside host containers like the Live Demonstration section.
+
 ------------------------------------------------------------------------
 
 ## ▶ How to Run

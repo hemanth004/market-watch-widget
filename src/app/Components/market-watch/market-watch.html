@@ -6,18 +6,31 @@
       <span class="subtitle">Real-Time Price Monitor</span>
     </div>
 
-    <button
-  (click)="toggleStream()"
-  class="control-btn"
-  [ngClass]="isRunning ? 'running' : 'paused'">
+    <div class="controls">
+      <div class="threshold-section">
+        <label>Alert Threshold</label>
+        <input
+          type="number"
+          [(ngModel)]="threshold"
+          placeholder="Enter price limit" />
+      </div>
 
-  <span class="icon">
-    {{ isRunning ? '⏸' : '▶' }}
-  </span>
+      <button
+        (click)="toggleStream()"
+        class="control-btn"
+        [ngClass]="isRunning ? 'running' : 'paused'">
 
-  {{ isRunning ? 'Pause Stream' : 'Resume Stream' }}
-</button>
-  </div>
+        <span class="icon">
+          {{ isRunning ? '⏸' : '▶' }}
+        </span>
+
+        {{ isRunning ? 'Pause Stream' : 'Resume Stream' }}
+        </button>
+      </div>
+
+    </div>
+
+    
 
   <div class="price-card" [class.alert]="isAlert">
 
@@ -35,25 +48,28 @@
         [class.down]="trend === 'down'">
         {{ trend === 'up' ? '▲' : trend === 'down' ? '▼' : '' }}
       </span>
+
+       <div class="alert-message" [class.visible]="isAlert">
+    Price exceeded threshold.
+  </div>
+  
     </div>
+
+
 
     <div class="meta">
       Last updated: {{ lastUpdated ?? '--' }}
     </div>
 
+   
+    
+    
+
   </div>
 
-  <div class="threshold-section">
-    <label>Alert Threshold</label>
-    <input
-      type="number"
-      [(ngModel)]="threshold"
-      placeholder="Enter price limit" />
-  </div>
+  
 
-  <div *ngIf="isAlert" class="alert-message">
-    Price exceeded threshold.
-  </div>
+ 
 
   <div class="chart-card">
     <canvas #priceChart></canvas>

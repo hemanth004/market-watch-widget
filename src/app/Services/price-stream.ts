@@ -3,9 +3,7 @@ import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PriceTick } from '../Models/price-tick.model';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class PriceStream {
 
   private priceSubject = new BehaviorSubject<PriceTick | null>(null);
